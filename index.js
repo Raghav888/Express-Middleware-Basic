@@ -3,7 +3,8 @@ const app = express()
 
 
 // Its our own created middelware, that will be called everytime, when  any endpoint is called.
-// Middleware will be called first and then next() will call the route that is requested
+// Middleware will be called first and then next() will call the route that is requested.
+// As we have written this middleware at top of all route, so it will be called first.
 app.use((req, res, next) => {
   console.log('Time:', Date.now());
   next(); // If we remove next(), then the requested route wont be called 
